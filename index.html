@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.733);
+            color: rgba(0, 0, 0, 0.952);
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+        #input-el {
+            width: 100%;
+        }
+
+        #convert-el {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 75px;
+        }
+
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            width: 500px;
+        }
+
+        /* The actual popup (appears on top) */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 90px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 2.5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 7.7px;
+            left: 20%;
+            margin-left: calc(90 * 0.05);
+            font-size: 0.7rem;
+        }
+
+        /* Popup arrow */
+
+        /* Toggle this class when clicking on the popup container (hide and show the popup) */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <body>
+        <div>
+            <label for="input-el">csv file</label>
+            <input id="input-el" type="file" onchange="loadFile() " />
+            <div class="popup">
+                <span class="popuptext" id="myPopup">Invalid file</span>
+            </div>
+            <button id="convert-el">Convert</button>
+        </div>
+        <script src="csv.js"></script>
+    </body>
+</html>
